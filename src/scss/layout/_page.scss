@@ -18,6 +18,7 @@ section {
 }
 
 div {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,4 +44,9 @@ img {
 li {
   border: 2px solid grey;
   padding: 10px;
+}
+
+.fave {
+  color: palevioletred;
+  border: 3px solid palevioletred;
 }
