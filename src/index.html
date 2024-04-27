@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Copichuelas del mundo</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/main.scss" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1>Copichuelas del mundo</h1>
+      <section class="search">
+        <h2>Buscador de cócteles</h2>
+        <input type="text" id="searchInput" class="js_searchInput" placeholder="ej. margarita"><button type="button" id="searchBtn" class="btn js_searchBtn">Buscar</button><button type="button" id="resetBtn" class="bnt js_resetBtn">Limpiar</button>
+      </section>
+      <section class="drinks">
+        <div class="drinks__favs">
+          <h3>Copichuelas favoritas</h3>
+          <ul class="drinks__favs--list js_faveList"></ul>
+        </div>
+        <div class="drinks__results">
+          <h3>Resultados de la búsqueda</h3>
+          <ul class="drinks__results--list js_searchResults">
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
