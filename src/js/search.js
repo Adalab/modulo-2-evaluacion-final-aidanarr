@@ -4,18 +4,28 @@
 
 function renderDrinks(array) {
     let drinksLi = "";
-    // Miramos si alguna de las bebidas del array está en favoritos
-    let favsIndex = faveDrinks.findIndex((drink) => drink.idDrink === array.idDrink);
-    // En caso de estar en favoritos, la variable faveClass pasará de estar vacía a contener "fave"
-    let faveClass = favsIndex === -1 ? "" : "fave";
+    let faveClass = "";
+    
+
+    if (favsLocalStorage !== null) {
+        // Miramos si alguna de las bebidas del array está en favoritos
+        let favsIndex = favsLocalStorage.findIndex((drink) => drink.idDrink === array.idDrink);
+        // En caso de estar en favoritos, la variable faveClass pasará de estar vacía a contener "fave"
+        faveClass = favsIndex === -1 ? "" : "fave";
+    } else {
+        let favsIndex = faveDrinks.findIndex((drink) => drink.idDrink === array.idDrink);
+        faveClass = favsIndex === -1 ? "" : "fave";
+    }
+    
+
 
     if (array.strDrinkThumb !== null){
-        drinksLi = `<li class="js_li ${faveClass}" id="${array.idDrink}">
+        drinksLi = `<li class="js_li ${faveClass} " id="${array.idDrink}">
         <p>${array.strDrink}</p>
         <img src="${array.strDrinkThumb}">
       </li>`
     } else {
-        drinksLi = `<li class="js_li ${faveClass}" id="${array.idDrink}">
+        drinksLi = `<li class="js_li ${faveClass} " id="${array.idDrink}">
         <p>${array.strDrink}</p>
         <img src="/images/placeholder.jpg">
       </li>`
@@ -67,7 +77,7 @@ function getDrinks(value) {
             drinks = data.drinks;
             drinksArray(drinks);
           });
-          
+    
 }
 
 // Event listeners botones búsqueda y reset

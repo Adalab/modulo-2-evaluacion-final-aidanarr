@@ -15,3 +15,6 @@ let valueInput = "";
 
 // Array con los favoritos
 let faveDrinks = [];
+
+// Local Storage
+const favsLocalStorage = JSON.parse(localStorage.getItem("fave drinks"));
