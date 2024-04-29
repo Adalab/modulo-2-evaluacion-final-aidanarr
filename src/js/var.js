@@ -10,11 +10,12 @@ const faveList = document.querySelector(".js_faveList");
 // Array con los resultados del fetch
 let drinks = [];
 
-// Input value
-let valueInput = "";
-
 // Array con los favoritos
 let faveDrinks = [];
 
 // Local Storage
 const favsLocalStorage = JSON.parse(localStorage.getItem("fave drinks"));
+
+if (favsLocalStorage !== null) {
+    faveDrinks = favsLocalStorage;
+}

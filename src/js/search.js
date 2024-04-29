@@ -1,24 +1,15 @@
 
-
-// Función para pintar las bebidas en el html. Si no hay imagen, ponemos un placeholder.
+// Función para pintar las bebidas en el html.
 
 function renderDrinks(array) {
     let drinksLi = "";
     let faveClass = "";
-    
 
-    if (favsLocalStorage !== null) {
-        // Miramos si alguna de las bebidas del array está en favoritos
-        let favsIndex = favsLocalStorage.findIndex((drink) => drink.idDrink === array.idDrink);
-        // En caso de estar en favoritos, la variable faveClass pasará de estar vacía a contener "fave"
-        faveClass = favsIndex === -1 ? "" : "fave";
-    } else {
-        let favsIndex = faveDrinks.findIndex((drink) => drink.idDrink === array.idDrink);
-        faveClass = favsIndex === -1 ? "" : "fave";
-    }
-    
+    // Cambia la variable faveClass dependiendo de si la bebida está en el array de favoritos o no
+    let favsIndex = faveDrinks.findIndex((drink) => drink.idDrink === array.idDrink);
+    faveClass = favsIndex === -1 ? "" : "fave";
 
-
+    // Condicional para poner un placeholder si no hay imagen
     if (array.strDrinkThumb !== null){
         drinksLi = `<li class="js_li ${faveClass} " id="${array.idDrink}">
         <p>${array.strDrink}</p>
@@ -56,7 +47,7 @@ function drinksArray(array) {
 
 function handleClickSearch(event) {
     event.preventDefault();
-    valueInput = searchInput.value;
+    const valueInput = searchInput.value;
     getDrinks(valueInput);
 }
 
@@ -85,4 +76,5 @@ function getDrinks(value) {
 searchBtn.addEventListener("click", handleClickSearch);
 
 resetBtn.addEventListener("click", handleClickReset);
+
 
