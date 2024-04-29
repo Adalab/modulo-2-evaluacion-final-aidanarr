@@ -16,27 +16,30 @@ function favsArray() {
     for (let drink of faveDrinks) {
         faveList.innerHTML += renderFavs(drink);
     }
+    // Ejecutamos también la función para recoger de nuevo todos los botones x
     deleteBtnArray();
 }
 
 function handleClickDelete(event) {
     let targetId = event.currentTarget.id;
-
+    // Borramos el elemento del array favs que coincida con el id de la x
     const clickedDrinkIndex = faveDrinks.findIndex((drink) => drink.idDrink === targetId);
     faveDrinks.splice(clickedDrinkIndex, 1);
 
+    // Volvemos a pintar los favs y las bebidas en el html
     favsArray()
     drinksArray(drinks);
 
+    // Actualizamos el Local Storage de favoritos
     localStorage.setItem("fave drinks", JSON.stringify(faveDrinks));
 }
 
+// Función para seleccionar todas las x y añadirle el event listener
+
 function deleteBtnArray() {
     let deleteBtn = document.querySelectorAll(".js_deleteBtn");
-
     for (let btn of deleteBtn) {
         btn.addEventListener("click", handleClickDelete);
-        console.log("a");
     }
 }
 
@@ -78,10 +81,17 @@ function handleClickAddFav(event) {
     
 }
 
-// Ejecutamos la función favsArray para que nos pinte por defecto las bebidas favoritas de Local Storage (si las hay)
+// Ejecutamos la función favsArray por defecto para que nos pinte las bebidas favoritas de Local Storage (si las hay)
 favsArray();
 
+function handleDeleteFavs(event) {
+    event.preventDefault();
+    faveDrinks = [];
+    faveList.innerHTML = "";
+    drinksArray(drinks);
+}
 
+deleteFavs.addEventListener("click", handleDeleteFavs);
 
 
 

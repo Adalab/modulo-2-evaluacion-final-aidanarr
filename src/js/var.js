@@ -1,7 +1,8 @@
-// Variables búsqueda
+// Variables búsqueda y botones
 const searchInput = document.querySelector(".js_searchInput");
 const searchBtn = document.querySelector(".js_searchBtn");
 const resetBtn = document.querySelector(".js_resetBtn");
+const deleteFavs = document.querySelector(".js_deleteFavs");
 
 // Lista de bebidas (búsqueda y favoritos)
 const searchResults = document.querySelector(".js_searchResults");
