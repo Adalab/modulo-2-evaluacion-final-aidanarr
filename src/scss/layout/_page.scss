@@ -44,9 +44,23 @@ img {
 li {
   border: 2px solid grey;
   padding: 10px;
+  position: relative;
 }
 
 .fave {
   color: palevioletred;
   border: 3px solid palevioletred;
+}
+
+.delete {
+  display: block;
+  background-color: grey;
+  width: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
