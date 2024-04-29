@@ -3,8 +3,8 @@
 
 function renderFavs(array) {
     return `<li id="${array.idDrink}">
-    <p class="delete js_deleteBtn" id="${array.idDrink}" >x</p>
-    <p>${array.strDrink}</p>
+    <p class="li-title">${array.strDrink}</p>
+    <div class="delete js_deleteBtn" id="${array.idDrink}" >x</div>
     <img src="${array.strDrinkThumb}">
     </li>`
 }

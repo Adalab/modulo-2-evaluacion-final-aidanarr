@@ -1,8 +1,14 @@
 @import 'core/variables';
 @import 'core/reset';
+@import "layout/header";
 @import 'layout/page';
+@import "layout/footer";
 
 :root {
     font-family: $font-main;
-    background-color: rgb(220, 220, 220);
+    background-color: $dark-grey;
 }
+
+ul {
+    list-style-type: none;
+  }

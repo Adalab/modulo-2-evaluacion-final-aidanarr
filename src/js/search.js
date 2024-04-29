@@ -11,14 +11,14 @@ function renderDrinks(array) {
 
     // Condicional para poner un placeholder si no hay imagen
     if (array.strDrinkThumb !== null){
-        drinksLi = `<li class="js_li ${faveClass} " id="${array.idDrink}">
-        <p>${array.strDrink}</p>
-        <img src="${array.strDrinkThumb}">
+        drinksLi = `<li class="js_li" id="${array.idDrink}">
+        <p class="li-title ${faveClass}">${array.strDrink}</p>
+        <img class="${faveClass}" src="${array.strDrinkThumb}">
       </li>`
     } else {
-        drinksLi = `<li class="js_li ${faveClass} " id="${array.idDrink}">
-        <p>${array.strDrink}</p>
-        <img src="/images/placeholder.jpg">
+        drinksLi = `<li class="js_li" id="${array.idDrink}">
+        <p class="li-title ${faveClass}">${array.strDrink}</p>
+        <img class="${faveClass}" src="/images/placeholder.jpg">
       </li>`
     }
     
@@ -47,7 +47,7 @@ function drinksArray(array) {
 
 function handleClickSearch(event) {
     event.preventDefault();
-    const valueInput = searchInput.value;
+    const valueInput = searchInput.value.toLowerCase();
     getDrinks(valueInput);
 }
 
