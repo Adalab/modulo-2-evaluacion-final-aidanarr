@@ -8,5 +8,9 @@
     img {
         width: 700px;
         height: 202px;
+        @media (width < 769px) {
+            width: 70%;
+            height: auto;
+          }
     }
 }

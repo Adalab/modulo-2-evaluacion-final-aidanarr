@@ -84,10 +84,13 @@ function handleClickAddFav(event) {
 // Ejecutamos la función favsArray por defecto para que nos pinte las bebidas favoritas de Local Storage (si las hay)
 favsArray();
 
+// Función para limpiar todos los favoritos con el botón de borrar favs
 function handleDeleteFavs(event) {
     event.preventDefault();
     faveDrinks = [];
+    localStorage.clear();
     faveList.innerHTML = "";
+    valueInput = ""; 
     drinksArray(drinks);
 }
 
