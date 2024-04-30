@@ -90,7 +90,6 @@ function handleDeleteFavs(event) {
     faveDrinks = [];
     localStorage.clear();
     faveList.innerHTML = "";
-    valueInput = ""; 
     drinksArray(drinks);
 }
 

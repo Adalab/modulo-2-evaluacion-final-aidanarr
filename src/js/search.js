@@ -47,9 +47,8 @@ function drinksArray(array) {
 
 function handleClickSearch(event) {
     event.preventDefault();
-    let valueInput = searchInput.value.toLowerCase();
+    const valueInput = searchInput.value.toLowerCase();
     getDrinks(valueInput);
-    return valueInput;
 }
 
 // Función para resetear el innerHTML
@@ -57,7 +56,7 @@ function handleClickSearch(event) {
 function handleClickReset(event) {
     event.preventDefault();
     searchResults.innerHTML = "";
-    valueInput = "";  
+    drinks = []; 
 }
 
 // Función con el fetch
